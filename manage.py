@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # ----------------------------------------------------------------------------
 # Copyright (c) 2018-2021, QIIME 2 development team.
 #
@@ -5,7 +6,8 @@
 #
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
-#!/usr/bin/env python
+
+
 import os
 import sys
 
