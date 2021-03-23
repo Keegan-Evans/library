@@ -22,11 +22,13 @@ def write_badges(fp_badges, package_names, branch):
         for name in package_names:
             fh.write(
                 '[![ci](https://github.com/qiime2/%s/actions/workflows/'
-                'ci.yml/badge.svg?branch=%s&event=push)](https://github.com/'
-                'qiime2/%s/actions/workflows/ci.yml) %s\n\n' % (name,
-                                                                branch, 
-                                                                name,
-                                                                name))
+                'ci.yml/badge.svg?branch=%s&event=push)]'
+                '(https://github.com/qiime2/%s/actions/workflows/'
+                'ci.yml?query=branch%%3A%s) %s\n\n' % (name,
+                                                      branch, 
+                                                      name,
+                                                      branch,
+                                                      name))
 
 
 if __name__ == '__main__':
