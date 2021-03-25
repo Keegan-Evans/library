@@ -56,14 +56,14 @@ def handle_new_builds(ctx):
 
         fetch_package_from_github.s(
             github_token, repository, run_id, channel, package_name, artifact_name,
-        ).apply_async(countdown=600),
+        ),
 
         reindex_conda_server.s(
             channel, channel_name,
         ),
 
         package_build_record_unverified_channel_finished.s(),
-    ).delay()
+    ).apply_async(countdown=600)
 
 
 @task(name='db.create_package_build_record_and_update_package')
